@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	# 第 3 方应用程序
+	'bootstrap3',
+	# 我的应用程序
 	'learning_logs',
 	'users',
 ]
