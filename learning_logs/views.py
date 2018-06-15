@@ -18,6 +18,7 @@ def topics(request):
 	context = {'topics': topics}
 	return render(request, 'learning_logs/topics.html', context)
 
+@login_required
 def topic(request, topic_id):
 	"""显示单个主题及其所有的条目"""
 	topic = Topic.objects.get(id=topic_id)
@@ -25,6 +26,7 @@ def topic(request, topic_id):
 	context = {'topic': topic, 'entries': entries}
 	return render(request, 'learning_logs/topic.html', context)
 
+@login_required
 def new_topic(request):
 	"""添加新主题"""
 	if request.method != 'POST':
@@ -40,6 +42,7 @@ def new_topic(request):
 	context = {'form': form}
 	return render(request, "learning_logs/new_topic.html", context)
 
+@login_required
 def new_entry(request, topic_id):
 	"""在特定的主题中添加新条目"""
 	topic = Topic.objects.get(id=topic_id)
@@ -60,6 +63,7 @@ def new_entry(request, topic_id):
 	context = {'topic': topic, 'form': form}
 	return render(request, 'learning_logs/new_entry.html', context)
 
+@login_required
 def edit_entry(request, entry_id):
 	"""编辑既有条目"""
 	entry = Entry.objects.get(id=entry_id)
