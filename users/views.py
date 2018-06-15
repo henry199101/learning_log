@@ -9,4 +9,4 @@ from django.shortcuts import render
 def logout_view(request):
 	"""注销用户"""
 	logout(request)
-	return HttpResponseRedirect(reverse('learning_los:index'))
+	return HttpResponseRedirect(reverse('learning_logs:index'))
